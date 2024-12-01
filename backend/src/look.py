@@ -52,13 +52,13 @@ def look(arm_position, lrequests, tracks, debug=False):
 
     if closest_left is not None:
         return {
-            "sequence": [arm_position] + right + [closest_left] + sorted(left),
+            "sequence": [arm_position] + right + [closest_left] + sorted(left, reverse=True),
             "average": average,
             "distance": distance,
         }
     else:
         return {
-            "sequence": [arm_position] + right + sorted(left),
+            "sequence": [arm_position] + right + sorted(left, reverse=True),
             "average": average,
             "distance": distance,
         }
